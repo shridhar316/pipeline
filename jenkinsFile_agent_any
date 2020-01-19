@@ -6,21 +6,22 @@ stage ('All stages') {
 parallel {
         stage('Build_check') {
             steps {
+				input ('Press yes to continue')
                 echo 'Building..'
-				sh 'sleep 100'
+				sh 'sleep 20'
 				
             }
         }
         stage('deploy') {
             steps {
                 echo 'Deploying to TEST environment..'
-				sh 'sleep 100'
+				sh 'sleep 20'
             }
         }
         stage('test') {
             steps {
                 echo 'Testing....'
-				sh 'sleep 100'
+				sh 'sleep 20'
 					}
 				}
     }
