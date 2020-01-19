@@ -9,7 +9,7 @@ parallel {
             steps {
 				input ('Press yes to continue')
                 echo 'Building..'
-				build job: 'parallel', parameters: [string(name: 'TEST', value: 'pipeline')) 
+				build job: 'parallel', parameters: [string(name: 'TEST', value: String.valueof('pipeline'))] 
 				sh 'sleep 20'
 				
             }
