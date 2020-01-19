@@ -1,24 +1,26 @@
 pipeline {
 agent any
+parallel {
 stages {
         stage('Build_check') {
             steps {
                 echo 'Building..'
-				sh 'pwd; chmod 777 build deploy test; ./build'
+				sh 'sleep 100'
 				
             }
         }
         stage('deploy') {
             steps {
                 echo 'Deploying to TEST environment..'
-				sh 'chmod 777 build deploy test; ./deploy'
+				sh 'sleep 100'
             }
         }
         stage('test') {
             steps {
                 echo 'Testing....'
-				sh 'chmod 777 build deploy test; ./test'
+				sh 'sleep 100'
 					}
 				}
     }
+}	
 }
