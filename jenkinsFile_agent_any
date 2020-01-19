@@ -2,6 +2,7 @@ pipeline {
 agent any
 
 stages {
+stage ('All stages') {
 parallel {
         stage('Build_check') {
             steps {
@@ -23,5 +24,6 @@ parallel {
 					}
 				}
     }
+	}
 }	
 }
